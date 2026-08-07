@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo con Tailwind CSS</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="styles.css">
+        
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
 
-<body class="flex justify-center items-center h-screen bg-cover bg-center"
-style="background-image: url('https://img.magnific.com/foto-gratis/siluetas-colinas-farolas-cielo-nublado-hermosa-puesta-sol_181624-28611.jpg');">
+    </head>
 
-    <div class="bg-white/80 p-8 rounded-xl shadow-lg text-center w-80">
-        <h1 class="text-3xl font-bold text-purple-600">
-            ¡Hola estudiantes!
-        </h1>
+<body>
 
-        <p class="mt-4 text-grau-700">
-            Este es un ejemplo sencillo usando Tailwind CSS.
-        </p>
+    <div class="login-box">
 
-        <button class="mt-6 bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-pink-700">
-            Presionar aquí
-        </button>
+
+        <h2>Iniciar sesión</h2>
+
+
+        <form>
+
+
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario">
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password">
+
+
+        <button type="submit">Entrar</button>
+        </form>
     </div>
-
 </body>
+</html>
+
+
+
+
+
+
+
+
 </html>
