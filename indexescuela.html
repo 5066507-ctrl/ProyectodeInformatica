@@ -4,136 +4,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
 
 ```
+<title>Mi Sitio Web</title>
+
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 ```
 
 </head>
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-slate-950 text-white">
 
 ```
 <!-- NAVBAR -->
-<header class="bg-blue-600 text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav class="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur-md
+            border-b border-slate-800 z-50">
 
-        <h1 class="text-2xl font-bold">
-            Mi Página
-        </h1>
+    <div class="max-w-6xl mx-auto px-6 py-4
+                flex justify-between items-center">
 
-        <nav class="hidden md:flex gap-6">
-            <a href="#inicio" class="hover:text-blue-200 transition">
+        <a href="#" class="text-2xl font-bold text-cyan-400">
+            MiWeb
+        </a>
+
+        <div class="hidden md:flex gap-8">
+            <a href="#inicio"
+               class="text-gray-300 hover:text-cyan-400 transition">
                 Inicio
             </a>
 
-            <a href="#servicios" class="hover:text-blue-200 transition">
+            <a href="#nosotros"
+               class="text-gray-300 hover:text-cyan-400 transition">
+                Nosotros
+            </a>
+
+            <a href="#servicios"
+               class="text-gray-300 hover:text-cyan-400 transition">
                 Servicios
             </a>
 
-            <a href="#contacto" class="hover:text-blue-200 transition">
+            <a href="#contacto"
+               class="text-gray-300 hover:text-cyan-400 transition">
                 Contacto
             </a>
-        </nav>
+        </div>
 
     </div>
-</header>
+</nav>
 
 
 <!-- HERO -->
 <section id="inicio"
-    class="min-h-[70vh] flex items-center justify-center text-center px-6
-    bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    class="min-h-screen flex items-center justify-center
+           px-6 pt-20
+           bg-gradient-to-br from-slate-950
+           via-blue-950 to-slate-950">
 
-    <div class="max-w-3xl">
+    <div class="max-w-4xl text-center">
 
-        <h2 class="text-4xl md:text-6xl font-extrabold mb-6">
-            ¡Bienvenido a mi página web!
-        </h2>
+        <span class="inline-block mb-6 px-4 py-2
+                     rounded-full bg-cyan-400/10
+                     border border-cyan-400/30
+                     text-cyan-400 text-sm font-semibold">
+            BIENVENIDO A MI SITIO WEB
+        </span>
 
-        <p class="text-lg md:text-xl text-blue-100 mb-8">
-            Una página moderna, elegante y adaptable a cualquier dispositivo.
+        <h1 class="text-5xl md:text-7xl font-black
+                   leading-tight mb-6">
+
+            Diseña.
+            <span class="text-cyan-400">Crea.</span>
+            Inspira.
+        </h1>
+
+        <p class="text-gray-400 text-lg md:text-xl
+                  max-w-2xl mx-auto mb-10">
+
+            Una página web moderna creada con HTML y Tailwind CSS,
+            lista para publicarse gratuitamente utilizando GitHub Pages.
         </p>
 
-        <a href="#servicios"
-            class="inline-block bg-white text-blue-600 px-8 py-3
-            rounded-lg font-bold shadow-lg
-            hover:bg-blue-50 hover:scale-105 transition">
-            Ver servicios
-        </a>
+        <div class="flex flex-col sm:flex-row
+                    justify-center gap-4">
+
+            <a href="#servicios"
+               class="px-8 py-4 bg-cyan-500
+                      hover:bg-cyan-400
+                      text-slate-950 font-bold
+                      rounded-xl transition">
+                Ver servicios
+            </a>
+
+            <a href="#contacto"
+               class="px-8 py-4 border border-slate-700
+                      hover:border-cyan-400
+                      hover:text-cyan-400
+                      rounded-xl transition">
+                Contactarme
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-24 px-6 bg-slate-900">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div>
+
+                <p class="text-cyan-400 font-bold mb-3">
+                    SOBRE NOSOTROS
+                </p>
+
+                <h2 class="text-4xl md:text-5xl
+                           font-bold mb-6">
+                    Creamos experiencias digitales.
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Nuestro objetivo es crear sitios web modernos,
+                    rápidos y fáciles de utilizar. Esta plantilla
+                    puede servir como base para un portafolio,
+                    negocio, proyecto escolar o página personal.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="bg-slate-800 p-6 rounded-2xl
+                            border border-slate-700">
+                    <p class="text-4xl font-black text-cyan-400">
+                        100%
+                    </p>
+
+                    <p class="text-gray-400 mt-2">
+                        Responsive
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-2xl
+                            border border-slate-700">
+                    <p class="text-4xl font-black text-cyan-400">
+                        24/7
+                    </p>
+
+                    <p class="text-gray-400 mt-2">
+                        Disponible
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-2xl
+                            border border-slate-700">
+                    <p class="text-4xl font-black text-cyan-400">
+                        100%
+                    </p>
+
+                    <p class="text-gray-400 mt-2">
+                        Personalizable
+                    </p>
+                </div>
+
+                <div class="bg-slate-800 p-6 rounded-2xl
+                            border border-slate-700">
+                    <p class="text-4xl font-black text-cyan-400">
+                        0$
+                    </p>
+
+                    <p class="text-gray-400 mt-2">
+                        Para comenzar
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 </section>
 
 
 <!-- SERVICIOS -->
-<section id="servicios" class="py-20 px-6">
+<section id="servicios" class="py-24 px-6 bg-slate-950">
 
     <div class="max-w-6xl mx-auto">
 
-        <h2 class="text-4xl font-bold text-center mb-12">
-            Mis Servicios
-        </h2>
+        <div class="text-center mb-14">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <p class="text-cyan-400 font-bold mb-3">
+                SERVICIOS
+            </p>
 
-            <!-- TARJETA 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-md
-                hover:shadow-xl hover:-translate-y-2 transition">
+            <h2 class="text-4xl md:text-5xl font-bold">
+                ¿Qué ofrecemos?
+            </h2>
 
-                <div class="text-4xl mb-5">
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- SERVICIO 1 -->
+            <div class="group bg-slate-900 p-8 rounded-2xl
+                        border border-slate-800
+                        hover:border-cyan-400
+                        transition">
+
+                <div class="text-5xl mb-6">
                     💻
                 </div>
 
-                <h3 class="text-2xl font-bold text-blue-600 mb-4">
+                <h3 class="text-2xl font-bold mb-4
+                           group-hover:text-cyan-400 transition">
                     Diseño Web
                 </h3>
 
-                <p class="text-gray-600">
-                    Creación de páginas web modernas, atractivas
-                    y fáciles de utilizar.
+                <p class="text-gray-400 leading-relaxed">
+                    Diseños modernos y adaptables para computadoras,
+                    tablets y teléfonos.
                 </p>
 
             </div>
 
 
-            <!-- TARJETA 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-md
-                hover:shadow-xl hover:-translate-y-2 transition">
+            <!-- SERVICIO 2 -->
+            <div class="group bg-slate-900 p-8 rounded-2xl
+                        border border-slate-800
+                        hover:border-cyan-400
+                        transition">
 
-                <div class="text-4xl mb-5">
-                    🚀
+                <div class="text-5xl mb-6">
+                    ⚡
                 </div>
 
-                <h3 class="text-2xl font-bold text-purple-600 mb-4">
+                <h3 class="text-2xl font-bold mb-4
+                           group-hover:text-cyan-400 transition">
                     Desarrollo
                 </h3>
 
-                <p class="text-gray-600">
+                <p class="text-gray-400 leading-relaxed">
                     Desarrollo de sitios web utilizando tecnologías
-                    modernas y eficientes.
+                    modernas como HTML, CSS y JavaScript.
                 </p>
 
             </div>
 
 
-            <!-- TARJETA 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-md
-                hover:shadow-xl hover:-translate-y-2 transition">
+            <!-- SERVICIO 3 -->
+            <div class="group bg-slate-900 p-8 rounded-2xl
+                        border border-slate-800
+                        hover:border-cyan-400
+                        transition">
 
-                <div class="text-4xl mb-5">
-                    🛠️
+                <div class="text-5xl mb-6">
+                    🚀
                 </div>
 
-                <h3 class="text-2xl font-bold text-green-600 mb-4">
-                    Soporte
+                <h3 class="text-2xl font-bold mb-4
+                           group-hover:text-cyan-400 transition">
+                    Optimización
                 </h3>
 
-                <p class="text-gray-600">
-                    Mantenimiento y actualización de páginas
-                    web para mantenerlas funcionando correctamente.
+                <p class="text-gray-400 leading-relaxed">
+                    Páginas optimizadas para ofrecer una experiencia
+                    rápida y agradable al usuario.
                 </p>
 
             </div>
@@ -146,23 +287,26 @@
 
 <!-- CONTACTO -->
 <section id="contacto"
-    class="bg-gray-900 text-white py-20 px-6 text-center">
+    class="py-24 px-6
+           bg-gradient-to-r from-cyan-500
+           to-blue-600">
 
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-3xl mx-auto text-center">
 
-        <h2 class="text-4xl font-bold mb-6">
-            ¿Quieres contactarme?
+        <h2 class="text-4xl md:text-5xl
+                   font-black text-slate-950 mb-6">
+            ¿Tienes un proyecto?
         </h2>
 
-        <p class="text-gray-300 text-lg mb-8">
-            Puedes comunicarte conmigo para obtener más información
-            sobre mis servicios.
+        <p class="text-slate-900/80 text-lg mb-8">
+            Escríbeme y podemos comenzar a trabajar en tu idea.
         </p>
 
-        <a href="mailto:correo@ejemplo.com"
-            class="inline-block bg-blue-600 px-8 py-3
-            rounded-lg font-bold
-            hover:bg-blue-700 transition">
+        <a href="mailto:tucorreo@example.com"
+           class="inline-block px-8 py-4
+                  bg-slate-950 text-white
+                  rounded-xl font-bold
+                  hover:bg-slate-800 transition">
             Enviar correo
         </a>
 
@@ -171,11 +315,32 @@
 
 
 <!-- FOOTER -->
-<footer class="bg-black text-gray-400 text-center py-6">
+<footer class="bg-black py-8 px-6">
 
-    <p>
-        © 2026 Mi Página Web. Todos los derechos reservados.
-    </p>
+    <div class="max-w-6xl mx-auto
+                flex flex-col md:flex-row
+                justify-between items-center gap-4">
+
+        <p class="text-gray-500">
+            © 2026 MiWeb. Todos los derechos reservados.
+        </p>
+
+        <div class="flex gap-6">
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="text-gray-500 hover:text-white transition">
+                GitHub
+            </a>
+
+            <a href="#inicio"
+               class="text-gray-500 hover:text-cyan-400 transition">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+    </div>
 
 </footer>
 ```
