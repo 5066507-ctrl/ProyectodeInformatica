@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complejo Educativo "10 de octubre 1987"</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    fontFamily: {
+                        titulo: ['Montserrat', 'Inter', 'sans-serif'],
+                        cuerpo: ['Open Sans', 'Roboto', 'sans-serif']
+                    },
+
+                    /* ================================================= */
+                    /* ANIMACIONES AGREGADAS */
+                    /* ================================================= */
+
+                    keyframes: {
+
+                        fadeIn: {
+                            '0%': {
+                                opacity: '0'
+                            },
+                            '100%': {
+                                opacity: '1'
+                            }
+                        },
+
+                        fadeInUp: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(35px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        },
+
+                        fadeInDown: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-25px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            }
+                        },
+
+                        fadeInLeft: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(-40px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            }
+                        },
+
+                        fadeInRight: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(40px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            }
+                        },
+
+                        zoomIn: {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'scale(0.92)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            }
+                        },
+
+                        float: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-8px)'
+                            }
+                        },
+
+                        pulseSoft: {
+                            '0%, 100%': {
+                                transform: 'scale(1)'
+                            },
+                            '50%': {
+                                transform: 'scale(1.04)'
+                            }
+                        },
+
+                        shine: {
+                            '0%': {
+                                backgroundPosition: '-200% center'
+                            },
+                            '100%': {
+                                backgroundPosition: '200% center'
+                            }
+                        },
+
+                        gradientMove: {
+                            '0%, 100%': {
+                                backgroundPosition: '0% 50%'
+                            },
+                            '50%': {
+                                backgroundPosition: '100% 50%'
+                            }
+                        }
+                    },
+
+                    animation: {
+
+                        'fade-in': 'fadeIn 0.8s ease-out both',
+
+                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
+
+                        'fade-in-down': 'fadeInDown 0.8s ease-out both',
+
+                        'fade-in-left': 'fadeInLeft 0.9s ease-out both',
+
+                        'fade-in-right': 'fadeInRight 0.9s ease-out both',
+
+                        'zoom-in': 'zoomIn 0.8s ease-out both',
+
+                        'float': 'float 3s ease-in-out infinite',
+
+                        'pulse-soft': 'pulseSoft 2.5s ease-in-out infinite',
+
+                        'shine': 'shine 3s linear infinite',
+
+                        'gradient-move': 'gradientMove 8s ease infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ================================================= */
+        /* ANIMACIONES ADICIONALES */
+        /* ================================================= */
+
+        .animacion-entrada {
+            animation: entrada 0.9s ease-out both;
+        }
+
+        @keyframes entrada {
+
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .animacion-flotante {
+            animation: flotante 4s ease-in-out infinite;
+        }
+
+        @keyframes flotante {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+
+        }
+
+        /* ================================================= */
+        /* ANIMACIÓN DE APARICIÓN DE SECCIONES */
+        /* ================================================= */
+
+        section {
+            animation: aparecerSeccion 0.8s ease-out both;
+        }
+
+        @keyframes aparecerSeccion {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
+        @media (max-width: 640px) {
+
+            .hero-title {
+                font-size: 2.2rem;
+                line-height: 1.15;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-section {
+                min-height: 600px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body class="font-cuerpo text-gray-800 bg-white">
+
+
+    <!-- ===================================================== -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ===================================================== -->
+
+    <header class="bg-[#071B3A] text-white sticky top-0 z-50 shadow-lg
+                   animate-fade-in-down">
+
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4
+                    flex items-center justify-between">
+
+            <a href="#inicio"
+               class="flex items-center gap-3 min-w-0
+                      transition-all duration-500
+                      hover:scale-105">
+
+                <div class="w-10 h-10 sm:w-12 sm:h-12
+                            bg-white rounded-full
+                            flex items-center justify-center
+                            shadow-md overflow-hidden
+                            shrink-0
+                            transition-all duration-500
+                            hover:rotate-6 hover:shadow-xl">
+
+                    <img
+                        src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/431883354_122128769084180586_2996250489034907883_n.jpg?stp=dst-jpg_tt6&cstp=mx1521x2044&ctp=s1521x2044&_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FqdYWqeUKz0Q7kNvwFR2nRt&_nc_oc=AdreO-ghST96uFYT02D0lQ4aG0-9pRah54rlSEi9lJxhIvLmwb0MBzPIbCIEHknLuxg&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=vP0Jnq8n0SEmLRdjKOz1tw&_nc_ss=7b289&oh=00_AQFhoQZKDaAZqcJJZiXUeZYnbLPcpDC83Cr3527AmU6E9A&oe=6A93E63F"
+                        alt="Escudo del Complejo Educativo 10 de octubre 1987"
+                        class="w-full h-full object-contain">
+
+                </div>
+
+                <div class="min-w-0">
+
+                    <h1 class="font-titulo font-bold text-xs sm:text-sm md:text-base truncate
+                               transition-colors duration-300">
+
+                        Complejo Educativo
+
+                    </h1>
+
+                    <p class="text-[10px] sm:text-xs text-blue-200">
+                        "10 de octubre 1987"
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- MENÚ DESKTOP -->
+
+            <div class="hidden lg:flex items-center gap-4 xl:gap-5
+                        font-medium text-sm">
+
+                <a href="#inicio"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Inicio
+                </a>
+
+                <a href="#nosotros"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Nosotros
+                </a>
+
+                <a href="#oferta"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Oferta Académica
+                </a>
+
+                <a href="#admisiones"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Admisiones
+                </a>
+
+                <a href="#proyecto"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Proyectos
+                </a>
+
+                <a href="#noticias"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Noticias
+                </a>
+
+                <a href="#ubicacion"
+                   class="hover:text-blue-300 transition-all duration-300
+                          hover:-translate-y-1">
+                    Ubicación
+                </a>
+
+                <a href="#contacto"
+                   class="bg-white text-[#071B3A]
+                          px-4 xl:px-5 py-2 rounded-full
+                          hover:bg-blue-100 hover:scale-105
+                          hover:shadow-lg
+                          transition-all duration-300">
+
+                    Contacto
+
+                </a>
+
+            </div>
+
+
+            <!-- BOTÓN MÓVIL -->
+
+            <button
+                type="button"
+                aria-label="Abrir menú"
+                class="lg:hidden text-3xl leading-none
+                       p-2 hover:text-blue-300
+                       transition-all duration-300
+                       hover:scale-110"
+                onclick="toggleMenu()">
+
+                ☰
+
+            </button>
+
+        </nav>
+
+
+        <!-- MENÚ MÓVIL -->
+
+        <div id="menuMovil"
+             class="hidden lg:hidden px-5 sm:px-6 pb-5
+                    border-t border-blue-900 bg-[#071B3A]
+                    animate-fade-in-down">
+
+            <a href="#inicio" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Inicio
+
+            </a>
+
+            <a href="#nosotros" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Nosotros
+
+            </a>
+
+            <a href="#oferta" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Oferta Académica
+
+            </a>
+
+            <a href="#admisiones" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Admisiones
+
+            </a>
+
+            <a href="#proyecto" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Proyectos Pedagógicos
+
+            </a>
+
+            <a href="#noticias" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Noticias
+
+            </a>
+
+            <a href="#ubicacion" onclick="cerrarMenu()"
+               class="block py-3 border-b border-blue-900/50
+                      hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Ubicación
+
+            </a>
+
+            <a href="#contacto" onclick="cerrarMenu()"
+               class="block py-3 hover:text-blue-300
+                      transition-all duration-300
+                      hover:translate-x-2">
+
+                Contacto
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===================================================== -->
+    <!-- INICIO -->
+    <!-- ===================================================== -->
+
+    <section id="inicio"
+             class="hero-section relative min-h-[620px]
+                    md:min-h-[650px]
+                    flex items-center overflow-hidden">
+
+        <div
+            class="absolute inset-0 bg-cover bg-center
+                   transition-transform duration-[8000ms]
+                   hover:scale-105"
+            style="background-image:
+            linear-gradient(
+                rgba(30,100,180,0.42),
+                rgba(7,60,120,0.32)
+            ),
+            url('https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/475766269_122192098820180586_5194634111403704231_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1072&ctp=s2048x1072&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mBMEBdj3zrwQ7kNvwEpVplW&_nc_oc=Adob8urENHPHRmcQwcTKxOyKMlNNrMizkieQoGduTB_lV7U2aVYM_gWlCygvuuWpYmg&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=pZg_BaOggsFjD9rDCK19pg&_nc_ss=7b289&oh=00_AQGnMOw4tVcLNA3z0oPnhZkt6_4tpZOl8yjT5_FkqLs6sw&oe=6A8EA33A');">
+        </div>
+
+        <div class="relative w-full max-w-7xl mx-auto
+                    px-5 sm:px-6 py-16 sm:py-20 md:py-24
+                    text-white">
+
+            <div class="max-w-3xl">
+
+                <span class="inline-block bg-blue-500/30
+                             border border-blue-200
+                             px-3 sm:px-4 py-2
+                             rounded-full text-xs sm:text-sm
+                             mb-5 sm:mb-6
+                             animate-fade-in-down
+                             hover:scale-105 transition-transform duration-300">
+
+                    Educación • Formación • Futuro
+
+                </span>
+
+                <h2 class="font-titulo hero-title
+                           text-4xl sm:text-5xl md:text-6xl
+                           font-extrabold leading-tight
+                           mb-5 sm:mb-6
+                           animate-fade-in-left">
+
+                    Complejo Educativo
+
+                    <span class="text-blue-200 block sm:inline
+                                 animate-pulse-soft">
+
+                        "10 de octubre 1987"
+
+                    </span>
+
+                </h2>
+
+                <p class="text-base sm:text-lg md:text-xl
+                          text-blue-50 mb-7 sm:mb-8
+                          max-w-2xl leading-7 sm:leading-8
+                          animate-fade-in-up"
+                   style="animation-delay: 0.2s;">
+
+                    Formamos estudiantes con conocimientos,
+                    valores y habilidades para construir
+                    un mejor futuro.
+
+                </p>
+
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4
+                            animate-fade-in-up"
+                     style="animation-delay: 0.4s;">
+
+                    <a href="#nosotros"
+                       class="bg-white text-[#071B3A]
+                              px-6 sm:px-7 py-3 rounded-full
+                              font-semibold text-center
+                              hover:bg-blue-100 hover:scale-105
+                              hover:shadow-2xl
+                              transition-all duration-300">
+
+                        Conócenos
+
+                    </a>
+
+                    <a href="#oferta"
+                       class="border border-white
+                              px-6 sm:px-7 py-3 rounded-full
+                              font-semibold text-center
+                              hover:bg-white hover:text-[#071B3A]
+                              hover:scale-105
+                              transition-all duration-300">
+
+                        Ver oferta académica
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- PROPUESTA DE VALOR -->
+    <!-- ===================================================== -->
+
+    <section class="py-14 sm:py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 text-center">
+
+            <span class="text-blue-600 font-semibold uppercase tracking-wider text-sm
+                         animate-fade-in-down inline-block">
+
+                Nuestra propuesta
+
+            </span>
+
+            <h2 class="font-titulo section-title text-3xl md:text-4xl
+                       font-bold text-[#071B3A] mt-2 mb-10 sm:mb-12
+                       animate-fade-in-up">
+
+                Educación para transformar
+
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up">
+
+                    <div class="text-4xl mb-5
+                                animate-float">
+
+                        🎓
+
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold mb-3">
+                        Formación integral
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+                        Promovemos el desarrollo académico,
+                        personal y social de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up"
+                     style="animation-delay: 0.15s;">
+
+                    <div class="text-4xl mb-5
+                                animate-float"
+                         style="animation-delay: 0.5s;">
+
+                        💡
+
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold mb-3">
+                        Innovación educativa
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+                        Fomentamos la creatividad, el pensamiento
+                        crítico y la innovación.
+                    </p>
+
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up"
+                     style="animation-delay: 0.3s;">
+
+                    <div class="text-4xl mb-5
+                                animate-float"
+                         style="animation-delay: 1s;">
+
+                        🤝
+
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold mb-3">
+                        Comunidad
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+                        Trabajamos junto a estudiantes, docentes,
+                        familias y comunidad.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- ACCESOS RÁPIDOS -->
+    <!-- ===================================================== -->
+
+    <section class="py-14 sm:py-16 bg-[#071B3A] text-white">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-8 sm:mb-10
+                        animate-fade-in-up">
+
+                <h2 class="font-titulo text-3xl font-bold">
+                    Accesos rápidos
+                </h2>
+
+                <p class="text-blue-200 mt-2">
+                    Encuentra rápidamente la información que necesitas.
+                </p>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4
+                        gap-4 sm:gap-5">
+
+                <a href="#admisiones"
+                   class="bg-white/10 p-5 sm:p-6 rounded-xl text-center
+                          hover:bg-white hover:text-[#071B3A]
+                          hover:-translate-y-2 hover:shadow-2xl
+                          transition-all duration-500
+                          animate-fade-in-up">
+
+                    <div class="text-3xl mb-2 animate-float">
+                        👨‍🎓
+                    </div>
+
+                    Portal del estudiante
+
+                </a>
+
+                <a href="#contacto"
+                   class="bg-white/10 p-5 sm:p-6 rounded-xl text-center
+                          hover:bg-white hover:text-[#071B3A]
+                          hover:-translate-y-2 hover:shadow-2xl
+                          transition-all duration-500
+                          animate-fade-in-up"
+                   style="animation-delay: 0.1s;">
+
+                    <div class="text-3xl mb-2 animate-float">
+                        👩‍🏫
+                    </div>
+
+                    Portal docente
+
+                </a>
+
+                <a href="#admisiones"
+                   class="bg-white/10 p-5 sm:p-6 rounded-xl text-center
+                          hover:bg-white hover:text-[#071B3A]
+                          hover:-translate-y-2 hover:shadow-2xl
+                          transition-all duration-500
+                          animate-fade-in-up"
+                   style="animation-delay: 0.2s;">
+
+                    <div class="text-3xl mb-2 animate-float">
+                        👨‍👩‍👧
+                    </div>
+
+                    Padres de familia
+
+                </a>
+
+                <a href="#noticias"
+                   class="bg-white/10 p-5 sm:p-6 rounded-xl text-center
+                          hover:bg-white hover:text-[#071B3A]
+                          hover:-translate-y-2 hover:shadow-2xl
+                          transition-all duration-500
+                          animate-fade-in-up"
+                   style="animation-delay: 0.3s;">
+
+                    <div class="text-3xl mb-2 animate-float">
+                        📰
+                    </div>
+
+                    Noticias
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- NOSOTROS -->
+    <!-- ===================================================== -->
+
+    <section id="nosotros" class="py-14 sm:py-20">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-14">
+
+                <span class="text-blue-600 font-semibold uppercase
+                             animate-fade-in-down inline-block">
+
+                    Conócenos
+
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl font-bold
+                           text-[#071B3A] mt-2
+                           animate-fade-in-up">
+
+                    Nosotros
+
+                </h2>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- HISTORIA -->
+            <!-- ================================================= -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2
+                        gap-8 sm:gap-12 items-center mb-14 sm:mb-20">
+
+                <div class="animate-fade-in-left">
+
+                    <img
+                        src="https://elpais.com.sv/wp-content/uploads/2024/11/d6b3b372-ca2b-43d4-adc4-dff7a3a22668-768x1024.jpg"
+                        alt="Complejo Educativo"
+                        class="rounded-2xl shadow-xl w-full
+                               max-h-[600px] object-cover
+                               hover:scale-[1.02]
+                               hover:shadow-2xl
+                               transition-all duration-700">
+
+                </div>
+
+                <div class="animate-fade-in-right">
+
+                    <h3 class="font-titulo text-3xl font-bold
+                               text-[#071B3A] mb-5">
+
+                        Nuestra Historia
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-8 mb-4">
+
+                        Durante los años 80, la situación de violencia
+                        en El Salvador hizo que muchas familias tuvieran
+                        que abandonar sus hogares y buscar un lugar seguro.
+                        Un grupo de personas logró salir del país y llegó
+                        a Santa Marta el 10 de octubre de 1987.
+
+                        Al llegar, encontraron las instalaciones de una
+                        escuela donde fueron recibidos y hospedados temporalmente.
+                        Después, la comunidad se organizó y comenzó nuevamente la
+                        educación popular, con maestros de la misma comunidad.
+                        En 1988 se iniciaron las clases con los recursos que tenían
+                        disponibles.
+
+                    </p>
+
+                    <p class="text-gray-600 leading-8">
+
+                        Con el apoyo de la comunidad, la Iglesia Luterana,
+                        el CRC y otras instituciones internacionales, la
+                        educación fue creciendo y se fueron mejorando las
+                        condiciones de la escuela. Con el tiempo, pasó de
+                        ser una escuela rural a ofrecer educación desde los
+                        primeros niveles hasta bachillerato.
+
+                        Por esta razón, la institución lleva el nombre de
+                        Complejo Educativo 10 de Octubre de 1987, en memoria
+                        de la fecha en que la comunidad llegó a Santa Marta y
+                        comenzó una nueva etapa de su historia.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- NUEVA GALERÍA DE FOTOGRAFÍAS -->
+            <!-- ================================================= -->
+
+            <div class="mb-16 sm:mb-20">
+
+                <div class="text-center mb-8 sm:mb-10
+                            animate-fade-in-up">
+
+                    <span class="text-blue-600 font-semibold uppercase
+                                 tracking-wider text-sm">
+
+                        Nuestra institución
+
+                    </span>
+
+                    <h3 class="font-titulo text-3xl sm:text-4xl
+                               font-bold text-[#071B3A] mt-2">
+
+                        Conoce nuestro centro educativo
+
+                    </h3>
+
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-3 leading-7">
+
+                        Un espacio donde estudiantes, docentes,
+                        familias y comunidad construyen juntos
+                        nuevas oportunidades para el futuro.
+
+                    </p>
+
+                </div>
+
+
+                <!-- GALERÍA -->
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+
+
+                    <!-- FOTO 1 -->
+
+                    <div class="group relative overflow-hidden
+                                rounded-2xl shadow-lg
+                                animate-zoom-in
+                                hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/709902894_122263981676180586_4835949155885241029_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x2048&ctp=s2048x2048&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=lf4QExfc-uYQ7kNvwGz6DPa&_nc_oc=AdqHHr-ZKTZEpiYCL_ZfBjbptveSCnpCrrgtDhWnfHeOJUR4resill96DYoFgouuBZ8&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=tcx9ykdWEGqWRBGXtX_z3g&_nc_ss=7b289&oh=00_AQHQ3-LvdVFjpIxyTr7x7tgzAenyceNEKoqc-cO-_Ik4nQ&oe=6A95539E"
+                            alt="Vista de la institución educativa"
+                            class="w-full h-72 object-cover
+                                   group-hover:scale-110
+                                   transition-transform duration-700">
+
+                        <div class="absolute inset-0
+                                    bg-gradient-to-t
+                                    from-[#071B3A]/80
+                                    via-transparent
+                                    to-transparent
+                                    opacity-0 group-hover:opacity-100
+                                    transition duration-500">
+
+                            <div class="absolute bottom-0 left-0
+                                        right-0 p-5 text-white
+                                        translate-y-5
+                                        group-hover:translate-y-0
+                                        transition-transform duration-500">
+
+                                <h4 class="font-titulo font-bold text-lg">
+                                    Nuestra institución
+                                </h4>
+
+                                <p class="text-sm text-blue-100 mt-1">
+                                    Comunidad Santa Marta
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FOTO 2 -->
+
+                    <div class="group relative overflow-hidden
+                                rounded-2xl shadow-lg
+                                animate-zoom-in
+                                hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500"
+                         style="animation-delay: 0.15s;">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/475539554_122192099066180586_349988087782665281_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=njIvzPNBAD8Q7kNvwFeUTgn&_nc_oc=Ado4JySwTg93kobrhbfAcXemcwDDvtcdb1es5Zpo-EbHxmwcqIl-ZkhTsPybNuNydKw&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=2QGMcGzdjfAps8YOjYbHUA&_nc_ss=7b289&oh=00_AQEWhlr801bUPwA-6ycaaJWZdU6GWYsDlQTuqvR20B1SMQ&oe=6A955D41"
+                            alt="Instalaciones del Complejo Educativo"
+                            class="w-full h-72 object-cover
+                                   group-hover:scale-110
+                                   transition-transform duration-700">
+
+                        <div class="absolute inset-0
+                                    bg-gradient-to-t
+                                    from-[#071B3A]/80
+                                    via-transparent
+                                    to-transparent
+                                    opacity-0 group-hover:opacity-100
+                                    transition duration-500">
+
+                            <div class="absolute bottom-0 left-0
+                                        right-0 p-5 text-white
+                                        translate-y-5
+                                        group-hover:translate-y-0
+                                        transition-transform duration-500">
+
+                                <h4 class="font-titulo font-bold text-lg">
+                                    Instalaciones educativas
+                                </h4>
+
+                                <p class="text-sm text-blue-100 mt-1">
+                                    Espacios para aprender y crecer
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FOTO 3 -->
+
+                    <div class="group relative overflow-hidden
+                                rounded-2xl shadow-lg
+                                animate-zoom-in
+                                hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500"
+                         style="animation-delay: 0.3s;">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/475695170_122192099024180586_2207625449708433678_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=DmDzIrw2HAkQ7kNvwHzvs69&_nc_oc=AdrCvFMRXQq50BJ3qoFtRmgNBNIszJ7TSn2PRViFRSsRGtbhcBn29EzjQIDkPY6sRro&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=tdGGuLN7XTUc__CgxKYZkg&_nc_ss=7b289&oh=00_AQKx3XaHfNd3ArAqTZDbtmH84JhMseW1-lIeN-dUOBnc1w&oe=6A97DFAF"
+                            alt="Actividad académica de estudiantes"
+                            class="w-full h-72 object-cover
+                                   group-hover:scale-110
+                                   transition-transform duration-700">
+
+                        <div class="absolute inset-0
+                                    bg-gradient-to-t
+                                    from-[#071B3A]/80
+                                    via-transparent
+                                    to-transparent
+                                    opacity-0 group-hover:opacity-100
+                                    transition duration-500">
+
+                            <div class="absolute bottom-0 left-0
+                                        right-0 p-5 text-white
+                                        translate-y-5
+                                        group-hover:translate-y-0
+                                        transition-transform duration-500">
+
+                                <h4 class="font-titulo font-bold text-lg">
+                                    Aulas del Complejo
+                                </h4>
+
+                                <p class="text-sm text-blue-100 mt-1">
+                                    Para formación de nuestros jóvenes
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <!-- ================================================= -->
+                       <!-- VIDEO DEL COMPLEJO EDUCATIVO -->
+            <!-- ================================================= -->
+
+<div class="mb-16 sm:mb-20">
+
+    <div class="text-center mb-8 sm:mb-10">
+
+        <span class="text-blue-600 font-semibold uppercase
+                     tracking-wider text-sm">
+
+            Conoce nuestro complejo
+
+        </span>
+
+        <h3 class="font-titulo text-3xl sm:text-4xl
+                   font-bold text-[#071B3A] mt-2">
+
+            Video de nuestra institución
+
+        </h3>
+
+        <p class="text-gray-600 max-w-2xl mx-auto mt-3 leading-7">
+
+            Conoce nuestras instalaciones y espacios educativos.
+
+
+        </p>
+
+    </div>
+
+    <div class="relative overflow-hidden rounded-2xl
+                shadow-xl bg-[#071B3A]">
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+            class="w-full aspect-video object-cover">
+
+            <source
+                src="./video-complejo.mp4"
+                type="video/mp4">
+
+            Tu navegador no puede reproducir este video.
+
+        </video>
+
+    </div>
+
+</div>
+
+
+
+            <!-- ================================================= -->
+            <!-- MISIÓN Y VISIÓN -->
+            <!-- ================================================= -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+                <div class="bg-blue-50 p-6 sm:p-8
+                            rounded-2xl border-l-4 border-[#071B3A]
+                            hover:shadow-lg hover:-translate-y-2
+                            transition-all duration-500
+                            animate-fade-in-left">
+
+                    <div class="text-4xl mb-4 animate-float">
+                        🎯
+                    </div>
+
+                    <h3 class="font-titulo text-2xl font-bold
+                               text-[#071B3A] mb-4">
+
+                        Misión
+
+                    </h3>
+
+                    <p class="text-gray-700 leading-7">
+
+                        Somos una institucion educativa,
+                        formadora de estudiantes con un aprendizaje
+                        integral a través de la implementación de
+                        técnicas metodologicas, con una atención
+                        a diversidad, para que sean capaces de
+                        obtener éxito con los diferentes retos de la vida.
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-blue-50 p-6 sm:p-8
+                            rounded-2xl border-l-4 border-[#071B3A]
+                            hover:shadow-lg hover:-translate-y-2
+                            transition-all duration-500
+                            animate-fade-in-right">
+
+                    <div class="text-4xl mb-4 animate-float">
+                        🔭
+                    </div>
+
+                    <h3 class="font-titulo text-2xl font-bold
+                               text-[#071B3A] mb-4">
+
+                        Visión
+
+                    </h3>
+
+                    <p class="text-gray-700 leading-7">
+
+                        Ser una institución inclusiva que ofrece
+                        una educación de acuerdo a las necesidades
+                        del alumno y la realidad en que viven,
+                        apropiandose de los cambios tecnológicos y
+                        cientificos, con énfasis en la práctica de
+                        valores para formar personas competentes que
+                        actúen de forma democratica en la transformación
+                        social, económica y cultural del país.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- VALORES -->
+    <!-- ===================================================== -->
+
+    <section class="py-14 sm:py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 text-center">
+
+            <h2 class="font-titulo section-title text-4xl font-bold
+                       text-[#071B3A] mb-10 sm:mb-12
+                       animate-fade-in-up">
+
+                Nuestros Valores
+
+            </h2>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2
+                        md:grid-cols-4 gap-4 sm:gap-6">
+
+                <div class="bg-white p-5 sm:p-7 rounded-xl shadow
+                            hover:shadow-xl hover:-translate-y-2
+                            transition-all duration-500
+                            animate-zoom-in">
+
+                    <div class="text-4xl animate-float">
+                        🤝
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Respeto
+                    </h3>
+
+                </div>
+
+                <div class="bg-white p-5 sm:p-7 rounded-xl shadow
+                            hover:shadow-xl hover:-translate-y-2
+                            transition-all duration-500
+                            animate-zoom-in"
+                     style="animation-delay: 0.1s;">
+
+                    <div class="text-4xl animate-float">
+                        ⭐
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Responsabilidad
+                    </h3>
+
+                </div>
+
+                <div class="bg-white p-5 sm:p-7 rounded-xl shadow
+                            hover:shadow-xl hover:-translate-y-2
+                            transition-all duration-500
+                            animate-zoom-in"
+                     style="animation-delay: 0.2s;">
+
+                    <div class="text-4xl animate-float">
+                        ❤️
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Solidaridad
+                    </h3>
+
+                </div>
+
+                <div class="bg-white p-5 sm:p-7 rounded-xl shadow
+                            hover:shadow-xl hover:-translate-y-2
+                            transition-all duration-500
+                            animate-zoom-in"
+                     style="animation-delay: 0.3s;">
+
+                    <div class="text-4xl animate-float">
+                        💡
+                    </div>
+
+                    <h3 class="font-bold mt-4">
+                        Compromiso
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- OFERTA ACADÉMICA -->
+    <!-- ===================================================== -->
+
+    <section id="oferta" class="py-14 sm:py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-14">
+
+                <span class="text-blue-600 font-semibold uppercase
+                             tracking-wider
+                             animate-fade-in-down inline-block">
+
+                    Formación académica
+
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl font-bold
+                           text-[#071B3A] mt-2
+                           animate-fade-in-up">
+
+                    Oferta Académica
+
+                </h2>
+
+                <p class="text-gray-600 max-w-3xl mx-auto mt-4 leading-7
+                          animate-fade-in-up">
+
+                    El Complejo Educativo "10 de octubre 1987"
+                    ofrece diferentes niveles educativos que
+                    acompañan al estudiante en las distintas
+                    etapas de su formación académica, personal y social.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                        gap-5 sm:gap-6">
+
+                <div class="bg-blue-50 p-6 sm:p-7 rounded-2xl
+                            border-t-4 border-[#071B3A]
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up">
+
+                    <div class="text-4xl mb-5 animate-float">
+                        🧸
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold
+                               text-[#071B3A] mb-3">
+
+                        Educación Parvularia
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+
+                        Atiende a los niños en sus primeros
+                        años de formación, desarrollando
+                        habilidades básicas mediante juegos
+                        y actividades.
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-blue-50 p-6 sm:p-7 rounded-2xl
+                            border-t-4 border-[#071B3A]
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up"
+                     style="animation-delay: 0.1s;">
+
+                    <div class="text-4xl mb-5 animate-float">
+                        📚
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold
+                               text-[#071B3A] mb-3">
+
+                        Primera infancia
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+
+                        Comprende la atención de los niños
+                        en sus primeras etapas, favoreciendo
+                        su desarrollo físico, emocional, social
+                        y cognitivo.
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-blue-50 p-6 sm:p-7 rounded-2xl
+                            border-t-4 border-[#071B3A]
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up"
+                     style="animation-delay: 0.2s;">
+
+                    <div class="text-4xl mb-5 animate-float">
+                        ✏️
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold
+                               text-[#071B3A] mb-3">
+
+                        Educación primaria básica
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+
+                        Se divide en 1° ciclo (2°, 3° y 4° grado),
+                        2° ciclo (5° y 6° grado) y 3° ciclo
+                        (7°, 8° y 9° grado). Fortalece los conocimientos
+                        y habilidades necesarios para continuar los estudios.
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-blue-50 p-6 sm:p-7 rounded-2xl
+                            border-t-4 border-[#071B3A]
+                            hover:-translate-y-2 hover:shadow-xl
+                            transition-all duration-500
+                            animate-fade-in-up"
+                     style="animation-delay: 0.3s;">
+
+                    <div class="text-4xl mb-5 animate-float">
+                        🎓
+                    </div>
+
+                    <h3 class="font-titulo text-xl font-bold
+                               text-[#071B3A] mb-3">
+
+                        Educación media
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-7">
+
+                        Comprende 1° y 2° año de Bachillerato General,
+                        preparando a los estudiantes para continuar
+                        su formación académica o incorporarse al
+                        ámbito laboral.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center mt-8 sm:mt-10 animate-fade-in-up">
+
+                <a href="#admisiones"
+                   class="inline-block bg-[#071B3A] text-white
+                          px-6 sm:px-7 py-3 rounded-full font-semibold
+                          hover:bg-blue-900 hover:scale-105
+                          hover:shadow-xl
+                          transition-all duration-300">
+
+                    Información de admisiones →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- ADMISIONES -->
+    <!-- ===================================================== -->
+
+    <section id="admisiones" class="py-14 sm:py-20 bg-gray-50">
+
+        <div class="max-w-6xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-12">
+
+                <span class="text-blue-600 font-semibold uppercase
+                             tracking-wider
+                             animate-fade-in-down inline-block">
+
+                    Forma parte de nuestra comunidad
+
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl font-bold
+                           text-[#071B3A] mt-2
+                           animate-fade-in-up">
+
+                    Admisiones
+
+                </h2>
+
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4
+                          animate-fade-in-up">
+
+                    Conoce el proceso de matrícula y realiza
+                    tu solicitud de inscripción.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+
+
+                <div class="bg-[#071B3A] text-white rounded-2xl
+                            p-6 sm:p-8 shadow-xl
+                            animate-fade-in-left
+                            hover:shadow-2xl
+                            transition-all duration-500">
+
+                    <h3 class="font-titulo text-2xl font-bold mb-8">
+                        Proceso de matrícula
+                    </h3>
+
+                    <div class="space-y-7">
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <div class="w-10 h-10 shrink-0 rounded-full
+                                        bg-white text-[#071B3A]
+                                        flex items-center justify-center
+                                        font-bold
+                                        hover:scale-110
+                                        transition-transform duration-300">
+
+                                1
+
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold">
+                                    Completa la solicitud
+                                </h4>
+
+                                <p class="text-blue-200 text-sm mt-1">
+                                    Ingresa los datos solicitados
+                                    en el formulario.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <div class="w-10 h-10 shrink-0 rounded-full
+                                        bg-white text-[#071B3A]
+                                        flex items-center justify-center
+                                        font-bold
+                                        hover:scale-110
+                                        transition-transform duration-300">
+
+                                2
+
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold">
+                                    Revisión
+                                </h4>
+
+                                <p class="text-blue-200 text-sm mt-1">
+                                    Se revisará la información
+                                    proporcionada.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <div class="w-10 h-10 shrink-0 rounded-full
+                                        bg-white text-[#071B3A]
+                                        flex items-center justify-center
+                                        font-bold
+                                        hover:scale-110
+                                        transition-transform duration-300">
+
+                                3
+
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold">
+                                    Confirmación
+                                </h4>
+
+                                <p class="text-blue-200 text-sm mt-1">
+                                    Se informarán los siguientes
+                                    pasos del proceso.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <div class="w-10 h-10 shrink-0 rounded-full
+                                        bg-white text-[#071B3A]
+                                        flex items-center justify-center
+                                        font-bold
+                                        hover:scale-110
+                                        transition-transform duration-300">
+
+                                4
+
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold">
+                                    Matrícula
+                                </h4>
+
+                                <p class="text-blue-200 text-sm mt-1">
+                                    Completa la matrícula siguiendo
+                                    las indicaciones de la institución.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <form onsubmit="enviarInscripcion(event)"
+                      class="bg-white rounded-2xl shadow-xl border
+                             p-6 sm:p-8
+                             animate-fade-in-right
+                             hover:shadow-2xl
+                             transition-all duration-500">
+
+                    <h3 class="font-titulo text-2xl font-bold
+                               text-[#071B3A] mb-6">
+
+                        Formulario de inscripción
+
+                    </h3>
+
+                    <label class="block font-semibold mb-2">
+                        Nombre del estudiante
+                    </label>
+
+                    <input type="text" required
+                           placeholder="Nombre completo"
+                           class="w-full border rounded-lg px-4 py-3 mb-5
+                                  focus:outline-none focus:ring-2
+                                  focus:ring-blue-500
+                                  focus:scale-[1.01]
+                                  transition-all duration-300">
+
+                    <label class="block font-semibold mb-2">
+                        Nivel educativo
+                    </label>
+
+                    <select required
+                            class="w-full border rounded-lg px-4 py-3 mb-5
+                                   focus:outline-none focus:ring-2
+                                   focus:ring-blue-500
+                                   transition-all duration-300">
+
+                        <option value="">
+                            Selecciona un nivel
+                        </option>
+
+                        <option>
+                            Educación Parvularia
+                        </option>
+
+                        <option>
+                            Educación Primaria / Básica
+                        </option>
+
+                        <option>
+                            Educación Secundaria / Bachillerato
+                        </option>
+
+                    </select>
+
+                    <label class="block font-semibold mb-2">
+                        Nombre del responsable
+                    </label>
+
+                    <input type="text" required
+                           placeholder="Padre, madre o responsable"
+                           class="w-full border rounded-lg px-4 py-3 mb-5
+                                  focus:outline-none focus:ring-2
+                                  focus:ring-blue-500
+                                  focus:scale-[1.01]
+                                  transition-all duration-300">
+
+                    <label class="block font-semibold mb-2">
+                        Correo electrónico
+                    </label>
+
+                    <input type="email" required
+                           placeholder="correo@ejemplo.com"
+                           class="w-full border rounded-lg px-4 py-3 mb-6
+                                  focus:outline-none focus:ring-2
+                                  focus:ring-blue-500
+                                  focus:scale-[1.01]
+                                  transition-all duration-300">
+
+                    <button type="submit"
+                            class="w-full bg-[#071B3A] text-white
+                                   py-3 rounded-lg font-semibold
+                                   hover:bg-blue-900
+                                   hover:scale-[1.02]
+                                   hover:shadow-xl
+                                   active:scale-95
+                                   transition-all duration-300">
+
+                        Enviar solicitud
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- PROYECTOS PEDAGÓGICOS -->
+    <!-- ===================================================== -->
+
+    <section id="proyecto" class="py-14 sm:py-20">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-2
+                        gap-8 sm:gap-12 items-center">
+
+                <div class="animate-fade-in-left">
+
+                    <span class="text-blue-600 font-semibold uppercase">
+                        Educación
+                    </span>
+
+                    <h2 class="font-titulo section-title text-4xl
+                               font-bold text-[#071B3A] mt-2 mb-6">
+
+                        Proyectos Pedagógicos
+
+                    </h2>
+
+                    <p class="text-gray-600 leading-8 mb-6">
+
+                        Kira Learning en El Salvador es un proyecto
+                        pedagógico nacional de educación pública que
+                        moderniza las aulas desde 2.° grado hasta segundo
+                        año de bachillerato, convirtiendo al país en un
+                        referente global de educación nativa en IA.
+
+                        Así funciona el proyecto KIRA en las escuelas:
+
+                    </p>
+
+                    <ul class="space-y-4 text-gray-700">
+
+                        <li class="hover:translate-x-2
+                                   transition-transform duration-300">
+
+                            ✓ Automatización Administrativa: KIRA asume
+                            las tareas pesadas de los profesores, como la
+                            planificación de clases y el papeleo burocrático.
+
+                        </li>
+
+                        <li class="hover:translate-x-2
+                                   transition-transform duration-300">
+
+                            ✓ Guiones Didácticos Listos: El asistente ya
+                            cuenta con más de 160 guiones y materiales
+                            educativos precargados y alineados al currículo
+                            nacional.
+
+                        </li>
+
+                        <li class="hover:translate-x-2
+                                   transition-transform duration-300">
+
+                            ✓ Uso Inmediato en el Aula: Los docentes solo
+                            deben ingresar a la plataforma, revisar el
+                            contenido del día y dar su clase.
+
+                        </li>
+
+                    </ul>
+
+                    <button onclick="mostrarMensaje()"
+                            class="mt-8 bg-[#071B3A] text-white
+                                   px-7 py-3 rounded-full font-semibold
+                                   hover:bg-blue-900
+                                   hover:scale-105
+                                   hover:shadow-xl
+                                   active:scale-95
+                                   transition-all duration-300">
+
+                        Conocer más
+
+                    </button>
+
+                </div>
+
+
+                <div class="animate-fade-in-right">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyJUcIrrALsslJ0e-u3AoYCG3ZPIokYeY6Cbl6JXuolvJGqred4UBPH6Wz&s=10"
+                        alt="Proyecto pedagógico"
+                        class="rounded-2xl shadow-xl w-full
+                               hover:scale-[1.03]
+                               hover:shadow-2xl
+                               transition-all duration-700">
+
+                </div>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2
+                        gap-8 sm:gap-12 items-center
+                        bg-white rounded-2xl p-6 sm:p-10
+                        shadow-lg mt-12
+                        hover:shadow-2xl
+                        transition-all duration-500
+                        animate-fade-in-up">
+
+                <div>
+
+                    <span class="text-blue-600 font-semibold uppercase">
+                        Proyecto 02
+                    </span>
+
+                    <h3 class="font-titulo text-3xl font-bold
+                               text-[#071B3A] mt-2 mb-6">
+
+                        Fiction Express
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-8 mb-6">
+
+                        Fiction Express es una estrategia de lectoescritura
+                        que busca fortalecer el hábito de la lectura,
+                        la comprensión lectora y la expresión de los
+                        estudiantes mediante historias interactivas.
+
+                        Los estudiantes leen capítulos de diferentes
+                        historias, realizan actividades de comprensión
+                        y participan activamente en el desarrollo de
+                        las narraciones.
+
+                    </p>
+
+                    <ul class="space-y-4 text-gray-700">
+
+                        <li class="hover:translate-x-2 transition-transform duration-300">
+                            ✓ Fomenta el hábito de la lectura.
+                        </li>
+
+                        <li class="hover:translate-x-2 transition-transform duration-300">
+                            ✓ Fortalece la comprensión lectora.
+                        </li>
+
+                        <li class="hover:translate-x-2 transition-transform duration-300">
+                            ✓ Desarrolla la creatividad y la imaginación.
+                        </li>
+
+                        <li class="hover:translate-x-2 transition-transform duration-300">
+                            ✓ Promueve la participación de los estudiantes.
+                        </li>
+
+                        <li class="hover:translate-x-2 transition-transform duration-300">
+                            ✓ Fortalece las habilidades de Lenguaje y Literatura.
+                        </li>
+
+                    </ul>
+
+                    <button onclick="mostrarFictionExpress()"
+                            class="mt-8 bg-[#071B3A] text-white
+                                   px-7 py-3 rounded-full
+                                   font-semibold
+                                   hover:bg-blue-900
+                                   hover:scale-105
+                                   hover:shadow-xl
+                                   active:scale-95
+                                   transition-all duration-300">
+
+                        Conocer más →
+
+                    </button>
+
+                </div>
+
+
+                <div class="animate-fade-in-right">
+
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgIWTeNkCuk4YBslgI4LCUJP0pW2BonAo-5JufvznmwnT0Cqc4YXVdLw&s=10"
+                        alt="Estudiantes participando en actividades de lectura"
+                        class="rounded-2xl shadow-xl w-full
+                               hover:scale-[1.03]
+                               hover:shadow-2xl
+                               transition-all duration-700">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- NOTICIAS -->
+    <!-- ===================================================== -->
+
+    <section id="noticias" class="py-14 sm:py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-12
+                        animate-fade-in-up">
+
+                <span class="text-blue-600 font-semibold uppercase">
+                    Mantente informado
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl
+                           font-bold text-[#071B3A] mt-2">
+
+                    Noticias y actividades
+
+                </h2>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3
+                        gap-6 sm:gap-8">
+
+
+                <!-- NOTICIA 1 -->
+
+                <article class="bg-white rounded-2xl overflow-hidden
+                                shadow hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500
+                                animate-fade-in-up">
+
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/474533087_122190953342180586_4113773169676623220_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2ggEhCh1e7EQ7kNvwFB-up4&_nc_oc=Adq-VIPSyGTzledtzg9y8tD5BG7hiDd3pbJjKxQqyFhkwO5vXO98lpi0k6Gf4BSefMs&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=Lm-39dCdpx-nPSXohgDY-A&_nc_ss=7b289&oh=00_AQHp3m1ag4AIVk4Edpft1hjeFkd3XKs02UwkgcgJoWcRNA&oe=6A8E8564"
+                            alt="Actividad escolar"
+                            class="w-full h-52 object-cover
+                                   hover:scale-110
+                                   transition-transform duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="text-sm text-blue-600 font-semibold">
+                            ACTIVIDAD
+                        </span>
+
+                        <h3 class="font-titulo text-xl font-bold
+                                   mt-2 mb-3">
+
+                            Actividades académicas
+
+                        </h3>
+
+                        <p class="text-gray-600">
+
+                            Capacitación en empresas, como proceso
+                            formativo por parte del proyecto de Integración.
+
+                        </p>
+
+                        <button onclick="mostrarNoticia('Actividades académicas')"
+                                class="mt-5 text-[#071B3A] font-semibold
+                                       hover:text-blue-600
+                                       hover:translate-x-2
+                                       transition-all duration-300">
+
+                            Leer más →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTICIA 2 -->
+
+                <article class="bg-white rounded-2xl overflow-hidden
+                                shadow hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500
+                                animate-fade-in-up"
+                         style="animation-delay: 0.15s;">
+
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/474521809_122190953558180586_6529127732742478553_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1538&ctp=s2048x1538&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=2ywSRVIYgM8Q7kNvwGGYCzN&_nc_oc=AdrAoJxd6MDxUxM02rovEFrH6bjTU4cj-o9GUYvbDR7wJlnQqf0M-pGCaGlEYw_ISmg&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=FS7C7J8M98_JuNti49vCMQ&_nc_ss=7b289&oh=00_AQF1fMBBp27vNPv_RcPBSRRFde1KiKjzF2ZcD7_vAeobSQ&oe=6A8E8788"
+                            alt="Estudiantes"
+                            class="w-full h-52 object-cover
+                                   hover:scale-110
+                                   transition-transform duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="text-sm text-blue-600 font-semibold">
+                            EDUCACIÓN
+                        </span>
+
+                        <h3 class="font-titulo text-xl font-bold
+                                   mt-2 mb-3">
+
+                            Formación estudiantil
+
+                        </h3>
+
+                        <p class="text-gray-600">
+
+                            Talleres impartidos por parte de ADES y Cocosi
+                            hace un tiempo, estas charlas trataban sobre
+                            la salud reproductiva.
+
+                        </p>
+
+                        <button onclick="mostrarNoticia('Formación estudiantil')"
+                                class="mt-5 text-[#071B3A] font-semibold
+                                       hover:text-blue-600
+                                       hover:translate-x-2
+                                       transition-all duration-300">
+
+                            Leer más →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTICIA 3 -->
+
+                <article class="bg-white rounded-2xl overflow-hidden
+                                shadow hover:-translate-y-2
+                                hover:shadow-2xl
+                                transition-all duration-500
+                                animate-fade-in-up"
+                         style="animation-delay: 0.3s;">
+
+                    <div class="overflow-hidden">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/657518807_122255025836180586_1038034658921208626_n.jpg?stp=dst-jpg_tt6&cstp=mx960x1280&ctp=s960x1280&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kxulMUTw2DcQ7kNvwFY3520&_nc_oc=AdqQOc7o98k3FP2q34-xjJLuJbX8bBbMEmV83SRVfrsaYhRZs9FJO9_monwP9AyJ3iA&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=9_qDcVnhQFTCz_2XS7I0QA&_nc_ss=7b289&oh=00_AQGg-GASpWe6wSxyzNPYm6sXiQgw1rQ_hY4_RSjy50QW7Q&oe=6A8E9B05"
+                            alt="Actividad deportiva"
+                            class="w-full h-52 object-cover
+                                   hover:scale-110
+                                   transition-transform duration-700">
+
+                    </div>
+
+                    <div class="p-6">
+
+                        <span class="text-sm text-blue-600 font-semibold">
+                            DEPORTES
+                        </span>
+
+                        <h3 class="font-titulo text-xl font-bold
+                                   mt-2 mb-3">
+
+                            Actividades extracurriculares
+                            y deportes
+
+                        </h3>
+
+                        <p class="text-gray-600">
+
+                            Mañanitas recreativas, juegos estudiantiles
+                            (Intramuros).
+
+                        </p>
+
+                        <button onclick="mostrarNoticia('Actividades deportivas')"
+                                class="mt-5 text-[#071B3A] font-semibold
+                                       hover:text-blue-600
+                                       hover:translate-x-2
+                                       transition-all duration-300">
+
+                            Leer más →
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- UBICACIÓN -->
+    <!-- ===================================================== -->
+
+    <section id="ubicacion" class="py-14 sm:py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-12
+                        animate-fade-in-up">
+
+                <span class="text-blue-600 font-semibold uppercase">
+                    Encuéntranos
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl
+                           font-bold text-[#071B3A] mt-2">
+
+                    Ubicación
+
+                </h2>
+
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+
+                    Visita el Complejo Educativo
+                    "10 de octubre 1987"
+                    en la Comunidad Santa Marta.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2
+                        gap-8 sm:gap-10">
+
+                <div class="animate-fade-in-left">
+
+                    <div class="bg-[#071B3A] text-white
+                                rounded-2xl p-6 sm:p-8
+                                shadow-xl
+                                hover:shadow-2xl
+                                transition-all duration-500">
+
+                        <div class="flex items-center gap-4 mb-7">
+
+                            <div class="text-5xl animate-float">
+                                📍
+                            </div>
+
+                            <div>
+
+                                <h3 class="font-titulo text-2xl font-bold">
+                                    Dirección
+                                </h3>
+
+                                <p class="text-blue-200">
+                                    Complejo Educativo
+                                    "10 de octubre 1987"
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="space-y-4 text-blue-100">
+
+                            <p class="hover:translate-x-2 transition-transform duration-300">
+                                🇸🇻 <strong>País:</strong>
+                                El Salvador
+                            </p>
+
+                            <p class="hover:translate-x-2 transition-transform duration-300">
+                                🗺️ <strong>Departamento:</strong>
+                                Cabañas
+                            </p>
+
+                            <p class="hover:translate-x-2 transition-transform duration-300">
+                                🏘️ <strong>Distrito:</strong>
+                                Victoria
+                            </p>
+
+                            <p class="hover:translate-x-2 transition-transform duration-300">
+                                📌 <strong>Comunidad:</strong>
+                                Santa Marta
+                            </p>
+
+                            <p class="hover:translate-x-2 transition-transform duration-300">
+                                📍 <strong>Referencia en Maps:</strong>
+                                X83G+8GJ
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="https://www.google.com/maps/search/?api=1&query=X83G%2B8GJ%2C%20Comunidad%20Santa%20Marta%2C%20El%20Salvador"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-block mt-8 bg-white
+                                   text-[#071B3A] px-6 py-3
+                                   rounded-full font-semibold text-center
+                                   hover:bg-blue-100
+                                   hover:scale-105
+                                   hover:shadow-xl
+                                   transition-all duration-300">
+
+                            📍 Abrir ubicación en Google Maps
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="mt-6 rounded-2xl
+                                overflow-hidden shadow-xl
+                                hover:shadow-2xl
+                                transition-all duration-500">
+
+                        <img
+                            src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/475766269_122192098820180586_5194634111403704231_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1072&ctp=s2048x1072&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kB8yjVdty6wQ7kNvwEsRqXN&_nc_oc=AdpVwTrEwoV94Is-gHW5pR84EU4gn1sALsdc3DfIK7ZtDR918AfKqBT3yyqGkZEEo3A&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=2HffK0Nfv_zs6zJAN2uRzA&_nc_ss=7b289&oh=00_AQGDDI5tH0ZG0NenfAkRezqyedkGVsfacpNCktVJDI73Xg&oe=6A93E93A"
+                            alt="Institución educativa"
+                            class="w-full h-64 object-cover
+                                   hover:scale-105
+                                   transition-transform duration-700">
+
+                    </div>
+
+                </div>
+
+
+                <div class="rounded-2xl overflow-hidden
+                            shadow-xl border
+                            h-[400px] sm:h-[500px] lg:h-auto
+                            min-h-[400px]
+                            animate-fade-in-right
+                            hover:shadow-2xl
+                            transition-all duration-500">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=X83G%2B8GJ%2C%20Comunidad%20Santa%20Marta%2C%20El%20Salvador&output=embed"
+                        width="100%"
+                        height="100%"
+                        class="w-full h-full min-h-[400px]"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- CONTACTO -->
+    <!-- ===================================================== -->
+
+    <section id="contacto" class="py-14 sm:py-20 bg-gray-50">
+
+        <div class="max-w-6xl mx-auto px-5 sm:px-6">
+
+            <div class="text-center mb-10 sm:mb-12
+                        animate-fade-in-up">
+
+                <span class="text-blue-600 font-semibold uppercase">
+                    Estamos para ayudarte
+                </span>
+
+                <h2 class="font-titulo section-title text-4xl
+                           font-bold text-[#071B3A] mt-2">
+
+                    Contacto
+
+                </h2>
+
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+
+                    ¿Tienes alguna pregunta?
+                    Envíanos tu consulta mediante este formulario.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2
+                        gap-8 sm:gap-10">
+
+
+                <div class="bg-[#071B3A] text-white
+                            rounded-2xl p-6 sm:p-8 shadow-xl
+                            animate-fade-in-left
+                            hover:shadow-2xl
+                            transition-all duration-500">
+
+                    <h3 class="font-titulo text-2xl font-bold mb-7">
+                        Información de contacto
+                    </h3>
+
+                    <div class="space-y-6">
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <span class="text-3xl animate-float">
+                                📍
+                            </span>
+
+                            <div>
+
+                                <h4 class="font-bold">
+                                    Ubicación
+                                </h4>
+
+                                <p class="text-blue-200">
+                                    Comunidad Santa Marta,
+                                    Victoria, Cabañas,
+                                    El Salvador.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <span class="text-3xl animate-float">
+                                🏫
+                            </span>
+
+                            <div>
+
+                                <h4 class="font-bold">
+                                    Institución
+                                </h4>
+
+                                <p class="text-blue-200">
+                                    Complejo Educativo
+                                    "10 de octubre 1987"
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="flex gap-4
+                                    hover:translate-x-2
+                                    transition-transform duration-300">
+
+                            <span class="text-3xl animate-float">
+                                🎓
+                            </span>
+
+                            <div>
+
+                                <h4 class="font-bold">
+                                    Niveles educativos
+                                </h4>
+
+                                <p class="text-blue-200">
+                                    Desde Parvularia hasta
+                                    Bachillerato.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="https://wa.me/50378515659"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block mt-8 bg-white
+                               text-[#071B3A] px-6 py-3
+                               rounded-full font-semibold
+                               hover:bg-blue-100
+                               hover:scale-105
+                               hover:shadow-xl
+                               transition-all duration-300">
+
+                        💬 Contactar por WhatsApp
+
+                        <span class="block text-sm font-normal mt-1">
+                            +503 7851 5659
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <form onsubmit="enviarSoporte(event)"
+                      class="bg-white rounded-2xl shadow-xl
+                             border p-6 sm:p-8
+                             animate-fade-in-right
+                             hover:shadow-2xl
+                             transition-all duration-500">
+
+                    <h3 class="font-titulo text-2xl
+                               font-bold text-[#071B3A] mb-6">
+
+                        Formulario de soporte
+
+                    </h3>
+
+                    <label class="block font-semibold mb-2">
+                        Nombre
+                    </label>
+
+                    <input type="text" required
+                           placeholder="Tu nombre"
+                           class="w-full border rounded-lg px-4 py-3 mb-5
+                                  focus:outline-none
+                                  focus:ring-2 focus:ring-blue-500
+                                  focus:scale-[1.01]
+                                  transition-all duration-300">
+
+                    <label class="block font-semibold mb-2">
+                        Correo electrónico
+                    </label>
+
+                    <input type="email" required
+                           placeholder="correo@ejemplo.com"
+                           class="w-full border rounded-lg px-4 py-3 mb-5
+                                  focus:outline-none
+                                  focus:ring-2 focus:ring-blue-500
+                                  focus:scale-[1.01]
+                                  transition-all duration-300">
+
+                    <label class="block font-semibold mb-2">
+                        Motivo de consulta
+                    </label>
+
+                    <select class="w-full border rounded-lg
+                                   px-4 py-3 mb-5
+                                   focus:outline-none
+                                   focus:ring-2 focus:ring-blue-500
+                                   transition-all duration-300">
+
+                        <option>
+                            Información general
+                        </option>
+
+                        <option>
+                            Oferta académica
+                        </option>
+
+                        <option>
+                            Admisiones
+                        </option>
+
+                        <option>
+                            Actividades extracurriculares
+                        </option>
+
+                        <option>
+                            Otro
+                        </option>
+
+                    </select>
+
+                    <label class="block font-semibold mb-2">
+                        Mensaje
+                    </label>
+
+                    <textarea rows="5" required
+                              placeholder="Escribe tu consulta..."
+                              class="w-full border rounded-lg
+                                     px-4 py-3 mb-6
+                                     focus:outline-none
+                                     focus:ring-2 focus:ring-blue-500
+                                     focus:scale-[1.01]
+                                     transition-all duration-300"></textarea>
+
+                    <button type="submit"
+                            class="w-full bg-[#071B3A] text-white
+                                   py-3 rounded-lg font-semibold
+                                   hover:bg-blue-900
+                                   hover:scale-[1.02]
+                                   hover:shadow-xl
+                                   active:scale-95
+                                   transition-all duration-300">
+
+                        Enviar consulta
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================================== -->
+
+    <footer class="bg-[#071B3A] text-white pt-12 sm:pt-14 pb-8
+                   animate-fade-in">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+            <div class="grid grid-cols-1 md:grid-cols-3
+                        gap-8 sm:gap-10 pb-10">
+
+
+                <div class="animate-fade-in-up">
+
+                    <div class="flex items-center gap-3 mb-5">
+
+                        <div class="w-12 h-12 bg-white rounded-full
+                                    flex items-center justify-center
+                                    shadow-md overflow-hidden
+                                    hover:rotate-6 hover:scale-105
+                                    transition-all duration-500">
+
+                            <img
+                                src="https://scontent-gua1-1.xx.fbcdn.net/v/t39.30808-6/431883354_122128769084180586_2996250489034907883_n.jpg?stp=dst-jpg_tt6&cstp=mx1521x2044&ctp=s1521x2044&_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=FqdYWqeUKz0Q7kNvwFR2nRt&_nc_oc=AdreO-ghST96uFYT02D0lQ4aG0-9pRah54rlSEi9lJxhIvLmwb0MBzPIbCIEHknLuxg&_nc_zt=23&_nc_ht=scontent-gua1-1.xx&_nc_gid=vP0Jnq8n0SEmLRdjKOz1tw&_nc_ss=7b289&oh=00_AQFhoQZKDaAZqcJJZiXUeZYnbLPcpDC83Cr3527AmU6E9A&oe=6A93E63F"
+                                alt="Escudo del Complejo Educativo"
+                                class="w-full h-full object-contain">
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-titulo font-bold">
+                                Complejo Educativo
+                            </h3>
+
+                            <p class="text-blue-200 text-sm">
+                                "10 de octubre 1987"
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-blue-200 leading-7">
+
+                        Educación, valores y oportunidades
+                        para construir un mejor futuro.
+
+                    </p>
+
+                </div>
+
+
+                <div class="animate-fade-in-up"
+                     style="animation-delay: 0.15s;">
+
+                    <h3 class="font-titulo font-bold text-lg mb-5">
+                        Enlaces
+                    </h3>
+
+                    <div class="space-y-3 text-blue-200">
+
+                        <a href="#inicio"
+                           class="block hover:text-white
+                                  hover:translate-x-2
+                                  transition-all duration-300">
+
+                            Inicio
+
+                        </a>
+
+                        <a href="#nosotros"
+                           class="block hover:text-white
+                                  hover:translate-x-2
+                                  transition-all duration-300">
+
+                            Nosotros
+
+                        </a>
+
+                        <a href="#oferta"
+                           class="block hover:text-white
+                                  hover:translate-x-2
+                                  transition-all duration-300">
+
+                            Oferta Académica
+
+                        </a>
+
+                        <a href="#admisiones"
+                           class="block hover:text-white
+                                  hover:translate-x-2
+                                  transition-all duration-300">
+
+                            Admisiones
+
+                        </a>
+
+                        <a href="#ubicacion"
+                           class="block hover:text-white
+                                  hover:translate-x-2
+                                  transition-all duration-300">
+
+                            Ubicación
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="animate-fade-in-up"
+                     style="animation-delay: 0.3s;">
+
+                    <h3 class="font-titulo font-bold text-lg mb-5">
+                        Ubicación
+                    </h3>
+
+                    <p class="text-blue-200 leading-7">
+
+                        📍 Comunidad Santa Marta<br>
+                        Victoria, Cabañas<br>
+                        El Salvador
+
+                    </p>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=X83G%2B8GJ%2C%20Comunidad%20Santa%20Marta%2C%20El%20Salvador"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block mt-4 text-white
+                               font-semibold hover:text-blue-300
+                               hover:translate-x-2
+                               transition-all duration-300">
+
+                        Ver en Google Maps →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="border-t border-blue-900 pt-6
+                        text-center text-blue-300 text-sm
+                        animate-fade-in">
+
+                © 2026 Complejo Educativo
+                "10 de octubre 1987".
+                Todos los derechos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ===================================================== -->
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <!-- ===================================================== -->
+
+    <button
+        id="btnArriba"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        aria-label="Volver arriba"
+        class="hidden fixed bottom-5 right-5
+               sm:bottom-6 sm:right-6
+               bg-[#071B3A] text-white
+               w-11 h-11 sm:w-12 sm:h-12
+               rounded-full shadow-xl
+               hover:bg-blue-900 hover:scale-110
+               hover:-translate-y-1
+               transition-all duration-300
+               z-40">
+
+        ↑
+
+    </button>
+
+
+    <!-- ===================================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================================== -->
+
+    <script>
+
+        function toggleMenu() {
+
+            const menu = document.getElementById("menuMovil");
+
+            menu.classList.toggle("hidden");
+
+        }
+
+
+        function cerrarMenu() {
+
+            const menu = document.getElementById("menuMovil");
+
+            menu.classList.add("hidden");
+
+        }
+
+
+        function mostrarMensaje() {
+
+            alert(
+                "Nuestro proyecto pedagógico promueve " +
+                "el aprendizaje significativo, el trabajo " +
+                "colaborativo, el pensamiento crítico y " +
+                "la formación integral."
+            );
+
+        }
+
+
+        function mostrarFictionExpress() {
+
+            alert(
+                "Fiction Express fortalece la lectura, " +
+                "la comprensión lectora, la creatividad " +
+                "y la participación de nuestros estudiantes."
+            );
+
+        }
+
+
+        function enviarInscripcion(event) {
+
+            event.preventDefault();
+
+            alert(
+                "¡Solicitud de inscripción enviada correctamente! " +
+                "La información ha sido registrada para su revisión."
+            );
+
+            event.target.reset();
+
+        }
+
+
+        function enviarSoporte(event) {
+
+            event.preventDefault();
+
+            alert(
+                "¡Gracias por contactarnos! " +
+                "Tu consulta ha sido enviada correctamente."
+            );
+
+            event.target.reset();
+
+        }
+
+
+        function mostrarNoticia(titulo) {
+
+            alert(
+                "Has seleccionado: " +
+                titulo +
+                ".\n\nPróximamente podrás consultar " +
+                "toda la información de esta actividad."
+            );
+
+        }
+
+
+        window.addEventListener("scroll", function() {
+
+            const boton = document.getElementById("btnArriba");
+
+            if (window.scrollY > 500) {
+
+                boton.classList.remove("hidden");
+
+            } else {
+
+                boton.classList.add("hidden");
+
+            }
+
+        });
+
+
+        window.addEventListener("resize", function() {
+
+            if (window.innerWidth >= 1024) {
+
+                cerrarMenu();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
